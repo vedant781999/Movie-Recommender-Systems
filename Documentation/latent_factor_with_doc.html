@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module latent_factor_with_doc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>latent_factor_with_doc</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cashish%5Cdesktop%5Cir3%5Clatent_factor_with_doc.py">c:\users\ashish\desktop\ir3\latent_factor_with_doc.py</a></font></td></tr></table>
+    <p><tt>IR&nbsp;Assignment-3<br>
+Recommender&nbsp;System&nbsp;Using&nbsp;Latent&nbsp;Factor&nbsp;Model&nbsp;Technique<br>
+Authors:&nbsp;Dhruv&nbsp;Shah<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vedant&nbsp;Goyal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ashish&nbsp;Gupta</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-building_ratings_dictionary_wrt_movies_and_users"><strong>building_ratings_dictionary_wrt_movies_and_users</strong></a>()</dt><dd><tt>movies_file&nbsp;is&nbsp;a&nbsp;file&nbsp;that&nbsp;contains&nbsp;information&nbsp;about&nbsp;all&nbsp;<br>
+&nbsp;&nbsp;the&nbsp;movies&nbsp;present&nbsp;in&nbsp;the&nbsp;database<br>
+&nbsp;<br>
+ratings_temp&nbsp;is&nbsp;a&nbsp;file&nbsp;that&nbsp;contains&nbsp;information&nbsp;about&nbsp;all&nbsp;<br>
+&nbsp;&nbsp;the&nbsp;ratings&nbsp;given&nbsp;by&nbsp;all&nbsp;the&nbsp;users&nbsp;to&nbsp;all&nbsp;the&nbsp;movies<br>
+&nbsp;&nbsp;present&nbsp;in&nbsp;the&nbsp;database<br>
+&nbsp;<br>
+users_temp&nbsp;is&nbsp;a&nbsp;file&nbsp;that&nbsp;contains&nbsp;information&nbsp;about&nbsp;all&nbsp;<br>
+&nbsp;&nbsp;the&nbsp;users&nbsp;present&nbsp;in&nbsp;the&nbsp;database<br>
+&nbsp;<br>
+movie_rate&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;dictionaries&nbsp;which&nbsp;is&nbsp;of&nbsp;the&nbsp;form<br>
+&nbsp;&nbsp;&nbsp;{movie1:{user1:rating1,user2:rating2...},movie2:{...}...}<br>
+&nbsp;&nbsp;&nbsp;where&nbsp;the&nbsp;keys&nbsp;are&nbsp;the&nbsp;all&nbsp;the&nbsp;movies&nbsp;of&nbsp;the&nbsp;database&nbsp;and&nbsp;the&nbsp;values&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;the&nbsp;dictionaries&nbsp;where&nbsp;the&nbsp;key&nbsp;is&nbsp;the&nbsp;user&nbsp;and&nbsp;his/her&nbsp;rating&nbsp;to&nbsp;that&nbsp;movie<br>
+&nbsp;&nbsp;&nbsp;the&nbsp;user&nbsp;is&nbsp;the&nbsp;part&nbsp;of&nbsp;the&nbsp;values&nbsp;of&nbsp;that&nbsp;movie&nbsp;iff&nbsp;he&nbsp;has&nbsp;given&nbsp;rating&nbsp;to&nbsp;that&nbsp;<br>
+&nbsp;&nbsp;&nbsp;movie<br>
+&nbsp;<br>
+user_rate&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;dictionaries&nbsp;which&nbsp;is&nbsp;of&nbsp;the&nbsp;form<br>
+&nbsp;&nbsp;&nbsp;{user1:{movie1:rating1,movie2:rating2...},user2:{...}...}<br>
+&nbsp;&nbsp;&nbsp;where&nbsp;the&nbsp;keys&nbsp;are&nbsp;the&nbsp;all&nbsp;the&nbsp;users&nbsp;of&nbsp;the&nbsp;database&nbsp;and&nbsp;the&nbsp;values&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;the&nbsp;dictionaries&nbsp;where&nbsp;the&nbsp;key&nbsp;is&nbsp;the&nbsp;movie&nbsp;and&nbsp;the&nbsp;rating&nbsp;of&nbsp;that&nbsp;movie<br>
+&nbsp;&nbsp;&nbsp;the&nbsp;movie&nbsp;is&nbsp;the&nbsp;part&nbsp;of&nbsp;the&nbsp;values&nbsp;of&nbsp;that&nbsp;user&nbsp;iff&nbsp;the&nbsp;user&nbsp;has&nbsp;given&nbsp;rating&nbsp;to&nbsp;that&nbsp;<br>
+&nbsp;&nbsp;&nbsp;movie<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All&nbsp;the&nbsp;three&nbsp;files&nbsp;are&nbsp;read&nbsp;&nbsp;and&nbsp;we&nbsp;use&nbsp;the&nbsp;ratings_temp&nbsp;file&nbsp;to&nbsp;make&nbsp;the&nbsp;user_rate&nbsp;and&nbsp;the&nbsp;<br>
+&nbsp;&nbsp;&nbsp;movie_rate.These&nbsp;2&nbsp;dictionaries&nbsp;store&nbsp;the&nbsp;information&nbsp;required&nbsp;to&nbsp;implement&nbsp;the&nbsp;latent&nbsp;factor&nbsp;model</tt></dd></dl>
+ <dl><dt><a name="-gradient_descent_to_implement_latent_factor_model"><strong>gradient_descent_to_implement_latent_factor_model</strong></a>()</dt><dd><tt>latent_factors&nbsp;is&nbsp;number&nbsp;of&nbsp;latent&nbsp;factors&nbsp;are&nbsp;required<br>
+eta&nbsp;is&nbsp;the&nbsp;learning&nbsp;rate<br>
+lamda&nbsp;is&nbsp;the&nbsp;regularization&nbsp;parameter<br>
+iter&nbsp;is&nbsp;the&nbsp;iteration&nbsp;number<br>
+&nbsp;<br>
+&nbsp;let&nbsp;(M)(Tra)=transpose&nbsp;of&nbsp;matrix&nbsp;M<br>
+&nbsp;let&nbsp;sigma(par)=sum&nbsp;of&nbsp;all&nbsp;the&nbsp;elements&nbsp;around&nbsp;that&nbsp;parameter<br>
+&nbsp;let&nbsp;A&nbsp;be&nbsp;the&nbsp;given&nbsp;ratings&nbsp;matrix.We&nbsp;have&nbsp;to&nbsp;split&nbsp;the&nbsp;matrix&nbsp;into&nbsp;2<br>
+&nbsp;matrices&nbsp;Q_matrix&nbsp;and&nbsp;P_matrix<br>
+&nbsp;<br>
+&nbsp;so&nbsp;that&nbsp;A=(Q_matrix)*((P_matrix)(Tra))<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;Since&nbsp;we&nbsp;are&nbsp;applying&nbsp;gradient&nbsp;descent&nbsp;we&nbsp;have&nbsp;to&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calculate&nbsp;and&nbsp;delta_Q&nbsp;and&nbsp;delta_P&nbsp;so&nbsp;that<br>
+&nbsp;<br>
+&nbsp;Q_matrix(time=t+1)=Q_matrix(time=t)-eta*delta_Q<br>
+&nbsp;P_matrix(time=t+1)=P_matrix(time=t)-eta*delta_P<br>
+&nbsp;<br>
+&nbsp;where,<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;delta_Q=sigma(user)(-2*((movie_rate[movie][user]-np.dot(Q_matrix[movie],P_matrix[user]))*P_matrix[user][latent_factor]))+2*lamda*P_matrix[movie][latent_factor]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;a&nbsp;particular&nbsp;movie&nbsp;and&nbsp;a&nbsp;latent_factor<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;delta_P=sigma(movie)(-2*((user_rate[user][movie]-np.dot(P_matrix[user],Q_matrix[movie]))*Q_matrix[movie][latent_factor]))+2*lamda*P_matrix[user][latent_factor]</tt></dd></dl>
+ <dl><dt><a name="-predict_and_calculate_MAE_and_RMSE"><strong>predict_and_calculate_MAE_and_RMSE</strong></a>()</dt><dd><tt>predict[user][movie]=&nbsp;np.dot(Q_matrix[movie],P_matrix[user])<br>
+&nbsp;<br>
+RMSE=(sse/count)**0.5<br>
+&nbsp;<br>
+MAE=abs_error/count<br>
+&nbsp;<br>
+sse=((sigma(user,movie))(predict[user][movie]-user_rate[user][movie]))**2<br>
+&nbsp;<br>
+count=total&nbsp;number&nbsp;of&nbsp;ratings<br>
+&nbsp;<br>
+abs_error=(sigma(1&nbsp;to&nbsp;count))abs((predict[user][movie]-user_rate[user][movie]))</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>P_matrix</strong> = array([[1.        , 1.        , 1.        , 1.  ...0.87027898, 0.87027898, 0.87027898, 0.87027898]])<br>
+<strong>Q_matrix</strong> = array([[1.        , 1.        , 1.        , 1.  ...1.        , 1.        , 1.        , 1.        ]])<br>
+<strong>__warningregistry__</strong> = {'version': 26}<br>
+<strong>abs_error</strong> = 717006.8424927574<br>
+<strong>col</strong> = 3<br>
+<strong>count</strong> = 1000209<br>
+<strong>delta_P</strong> = array([[ 0.        ,  0.        ,  0.        ,  ...4745239,  2.44745239,  2.44745239,  2.44745239]])<br>
+<strong>delta_Q</strong> = array([[ 0.        ,  0.        ,  0.        ,  ...       ,  0.        ,  0.        ,  0.        ]])<br>
+<strong>error</strong> = 820173.7626664168<br>
+<strong>eta</strong> = 2e-05<br>
+<strong>file</strong> = &lt;_io.TextIOWrapper name='users.dat' mode='r' encoding='cp1252'&gt;<br>
+<strong>i</strong> = 6040<br>
+<strong>iter</strong> = 199<br>
+<strong>lamda</strong> = 2<br>
+<strong>latent_factor</strong> = 4<br>
+<strong>mae</strong> = 0.7168570193757079<br>
+<strong>maxi</strong> = 6.61574479780309<br>
+<strong>mean</strong> = 3.581564453029317<br>
+<strong>mini</strong> = 0.8006995010785322<br>
+<strong>movie</strong> = 1097<br>
+<strong>movie_id</strong> = 1097<br>
+<strong>movie_rate</strong> = {1: {1: 5, 6: 4, 8: 4, 9: 5, 10: 5, 18: 4, 19: 5, 21: 3, 23: 4, 26: 3, ...}, 2: {10: 5, 13: 3, 18: 2, 23: 2, 27: 1, 40: 5, 44: 4, 48: 3, 53: 5, 60: 5, ...}, 3: {26: 2, 45: 2, 62: 3, 137: 5, 153: 5, 163: 1, 166: 3, 169: 5, 199: 3, 202: 3, ...}, 4: {8: 3, 26: 3, 155: 1, 187: 4, 199: 1, 203: 1, 216: 3, 225: 2, 323: 2, 329: 3, ...}, 5: {26: 5, 48: 3, 155: 2, 169: 4, 202: 3, 237: 4, 261: 2, 264: 2, 284: 1, 301: 3, ...}, 6: {5: 2, 7: 4, 15: 4, 23: 3, 36: 5, 42: 4, 48: 4, 52: 5, 56: 4, 62: 3, ...}, 7: {10: 4, 26: 4, 34: 3, 35: 2, 36: 4, 45: 1, 48: 4, 62: 3, 137: 3, 148: 3, ...}, 8: {73: 2, 75: 5, 92: 3, 119: 3, 166: 4, 195: 4, 200: 3, 509: 3, 629: 4, 634: 3, ...}, 9: {65: 5, 73: 3, 103: 4, 149: 3, 185: 3, 192: 1, 199: 3, 204: 2, 302: 1, 524: 2, ...}, 10: {13: 3, 18: 5, 19: 5, 22: 3, 36: 4, 42: 3, 48: 4, 60: 4, 82: 4, 93: 3, ...}, ...}<br>
+<strong>movies_file</strong> = "1::Toy Story (1995)::Animation|Children's|Comedy...rama<font color="#c040c0">\n</font>3952::Contender, The (2000)::Drama|Thriller<font color="#c040c0">\n</font>"<br>
+<strong>predict</strong> = 3.674821524078642<br>
+<strong>r2_score</strong> = 0.3429022051141518<br>
+<strong>rating</strong> = 4<br>
+<strong>ratings</strong> = ['1::1193::5::978300760', '1::661::3::978302109', '1::914::3::978301968', '1::3408::4::978300275', '1::2355::5::978824291', '1::1197::3::978302268', '1::1287::5::978302039', '1::2804::5::978300719', '1::594::4::978302268', '1::919::4::978301368', '1::595::5::978824268', '1::938::4::978301752', '1::2398::4::978302281', '1::2918::4::978302124', '1::1035::5::978301753', '1::2791::4::978302188', '1::2687::3::978824268', '1::2018::4::978301777', '1::3105::5::978301713', '1::2797::4::978302039', ...]<br>
+<strong>ratings_temp</strong> = '1::1193::5::978300760<font color="#c040c0">\n</font>1::661::3::978302109<font color="#c040c0">\n</font>1::91...040::1096::4::956715648<font color="#c040c0">\n</font>6040::1097::4::956715569<font color="#c040c0">\n</font>'<br>
+<strong>rmse</strong> = 0.9055398291453246<br>
+<strong>row</strong> = 6040<br>
+<strong>sse</strong> = 820173.7626664168<br>
+<strong>sst</strong> = 1248176.0995848393<br>
+<strong>sum</strong> = 2.447452387073076<br>
+<strong>temp_list</strong> = ['6040', '1097', '4', '956715569']<br>
+<strong>user</strong> = 5998<br>
+<strong>user_id</strong> = 6040<br>
+<strong>user_rate</strong> = {1: {1: 5, 48: 5, 150: 5, 260: 4, 527: 5, 531: 4, 588: 4, 594: 4, 595: 5, 608: 4, ...}, 2: {21: 1, 95: 2, 110: 5, 163: 4, 165: 3, 235: 3, 265: 4, 292: 3, 318: 5, 349: 4, ...}, 3: {104: 4, 260: 5, 480: 4, 552: 4, 590: 4, 593: 3, 648: 3, 653: 4, 733: 5, 1049: 4, ...}, 4: {260: 5, 480: 4, 1036: 4, 1097: 4, 1196: 2, 1198: 5, 1201: 5, 1210: 3, 1214: 4, 1240: 5, ...}, 5: {6: 2, 16: 3, 24: 1, 29: 5, 32: 4, 34: 4, 36: 3, 39: 3, 41: 4, 47: 3, ...}, 6: {1: 4, 17: 4, 34: 4, 48: 5, 199: 5, 266: 4, 296: 2, 364: 4, 368: 4, 377: 3, ...}, 7: {6: 4, 110: 5, 349: 5, 377: 3, 380: 5, 442: 4, 457: 5, 474: 5, 480: 4, 589: 5, ...}, 8: {1: 4, 4: 3, 14: 4, 16: 4, 17: 4, 24: 4, 25: 5, 36: 4, 39: 3, 42: 3, ...}, 9: {1: 5, 16: 4, 25: 4, 47: 5, 50: 4, 150: 3, 162: 4, 223: 4, 300: 4, 318: 5, ...}, 10: {1: 5, 2: 5, 7: 4, 24: 3, 32: 5, 48: 4, 62: 5, 104: 3, 110: 4, 116: 3, ...}, ...}<br>
+<strong>users_temp</strong> = '1::F::1::10::48067<font color="#c040c0">\n</font>2::M::56::16::70072<font color="#c040c0">\n</font>3::M::25:...4706<font color="#c040c0">\n</font>6039::F::45::0::01060<font color="#c040c0">\n</font>6040::M::25::6::11106<font color="#c040c0">\n</font>'</td></tr></table>
+</body></html>

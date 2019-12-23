@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Comments</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Comments</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:f%3A%5Cir%20assignment%203%5Ccomments.py">f:\ir assignment 3\comments.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-C_matrix"><strong>C_matrix</strong></a>()</dt><dd><tt>Making&nbsp;the&nbsp;C&nbsp;matrix&nbsp;by&nbsp;selecting&nbsp;columns&nbsp;randomly&nbsp;and&nbsp;according&nbsp;to&nbsp;their&nbsp;probablity</tt></dd></dl>
+ <dl><dt><a name="-RMS_caalculation"><strong>RMS_caalculation</strong></a>()</dt><dd><tt>Calculating&nbsp;rms</tt></dd></dl>
+ <dl><dt><a name="-R_matrix"><strong>R_matrix</strong></a>()</dt><dd><tt>finding&nbsp;random&nbsp;rows<br>
+#Making&nbsp;the&nbsp;R&nbsp;matrix&nbsp;by&nbsp;selecting&nbsp;rows&nbsp;randomly&nbsp;and&nbsp;according&nbsp;to&nbsp;their&nbsp;probablity</tt></dd></dl>
+ <dl><dt><a name="-U_matrix"><strong>U_matrix</strong></a>()</dt><dd><tt>Making&nbsp;the&nbsp;temporary&nbsp;U&nbsp;matrix</tt></dd></dl>
+ <dl><dt><a name="-apply_SVD"><strong>apply_SVD</strong></a>()</dt><dd><tt>Applying&nbsp;SVD&nbsp;on&nbsp;U&nbsp;matrix&nbsp;and&nbsp;pseudo&nbsp;inverse&nbsp;on&nbsp;S</tt></dd></dl>
+ <dl><dt><a name="-calculate_probablity_rows_cols"><strong>calculate_probablity_rows_cols</strong></a>()</dt><dd><tt>Calculating&nbsp;the&nbsp;probablities&nbsp;of&nbsp;individual&nbsp;rows&nbsp;and&nbsp;columns<br>
+user_prob&nbsp;array&nbsp;is&nbsp;for&nbsp;rows&nbsp;and&nbsp;movie_prob&nbsp;is&nbsp;for&nbsp;columns<br>
+All&nbsp;probablities&nbsp;are&nbsp;divided&nbsp;by&nbsp;frobenius&nbsp;norm&nbsp;of&nbsp;the&nbsp;entire&nbsp;matrix</tt></dd></dl>
+ <dl><dt><a name="-construction_of_input_matrix"><strong>construction_of_input_matrix</strong></a>()</dt><dd><tt>Loaded&nbsp;the&nbsp;ratings&nbsp;file&nbsp;and&nbsp;prepared&nbsp;the&nbsp;input&nbsp;matrix&nbsp;A(User*Movie)</tt></dd></dl>
+ <dl><dt><a name="-cumulative_frequency"><strong>cumulative_frequency</strong></a>()</dt><dd><tt>Calculating&nbsp;the&nbsp;cumulative&nbsp;frequency&nbsp;of&nbsp;user_prob&nbsp;and&nbsp;movie_prob<br>
+#&nbsp;for&nbsp;selecting&nbsp;rows&nbsp;and&nbsp;columns&nbsp;randomly&nbsp;accofrding&nbsp;to&nbsp;the&nbsp;corresponding&nbsp;probablities</tt></dd></dl>
+ <dl><dt><a name="-ninty_percent_CUR"><strong>ninty_percent_CUR</strong></a>()</dt><dd><tt>Calculating&nbsp;90%&nbsp;CUR&nbsp;by&nbsp;applying&nbsp;90%&nbsp;SVD&nbsp;on&nbsp;the&nbsp;U&nbsp;matrix</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>A</strong> = array([[5, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0,..., ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]])<br>
+<strong>C</strong> = array([[0.        , 0.        , 0.        , ...,....., 0.        , 0.        ,
+        0.        ]])<br>
+<strong>R</strong> = array([[3.28606238, 3.28606238, 2.19070826, ...,....., 0.        , 0.        ,
+        0.        ]])<br>
+<strong>S</strong> = array([[1.10982008e-07, 0.00000000e+00, 0.000000...0.00000000e+00, 0.00000000e+00, 1.04586251e-03]])<br>
+<strong>S_temp</strong> = array([3.00174441e+03, 7.45177375e+02, 6.6285511... 1.31669141e-13, 9.11720962e-14, 4.88679698e-14])<br>
+<strong>U</strong> = array([[5., 0., 0., ..., 5., 0., 0.],
+       [4...., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 3.]])<br>
+<strong>X</strong> = array([[-2.49326241e-02,  5.71296680e-02,  2.886...56187697e-03,  1.24197545e-02,  6.26131079e-03]])<br>
+<strong>XT</strong> = array([[-2.49326241e-02, -2.44802255e-02, -1.073...49313158e-03, -3.04545421e-02,  6.26131079e-03]])<br>
+<strong>Y</strong> = array([[-0.03649297,  0.03364442, -0.0259116 , ....  0.00801252,
+        -0.03855716,  0.00213025]])<br>
+<strong>YT</strong> = array([[-0.03649297, -0.00847111, -0.0125645 , .... -0.00484286,
+         0.01577261,  0.00213025]])<br>
+<strong>br_90</strong> = 633<br>
+<strong>cdf_movie_prob</strong> = array([[0.00264411],
+       [0.00320241],
+      ...8199],
+       [1.        ],
+       [1.        ]])<br>
+<strong>cdf_user_prob</strong> = array([[6.77630886e-05],
+       [2.03218235e-04]...      [1.00000000e+00],
+       [1.00000000e+00]])<br>
+<strong>cnt</strong> = 4000000<br>
+<strong>i</strong> = 1999<br>
+<strong>j</strong> = 1999<br>
+<strong>line</strong> = ['6040', '1097', '4', '956715569<font color="#c040c0">\n</font>']<br>
+<strong>movie_len</strong> = 3953<br>
+<strong>movie_prob</strong> = array([[2.64411003e-03],
+       [5.58299661e-04]...      [4.18014441e-04],
+       [0.00000000e+00]])<br>
+<strong>new_U</strong> = array([[ 6.47969315e-07, -1.89045184e-06,  6.225...40109983e-06, -1.35046915e-05,  1.98252261e-06]])<br>
+<strong>num_of_ratings</strong> = 1000209<br>
+<strong>predicted_CUR</strong> = array([[ 0.0287195 , -0.00164912, -0.00588718, ....  0.        ,
+         0.        ,  0.        ]])<br>
+<strong>r</strong> = 2000<br>
+<strong>rand</strong> = 0.9330614063642518<br>
+<strong>ratings_data</strong> = ['1::1193::5::978300760<font color="#c040c0">\n</font>', '1::661::3::978302109<font color="#c040c0">\n</font>', '1::914::3::978301968<font color="#c040c0">\n</font>', '1::3408::4::978300275<font color="#c040c0">\n</font>', '1::2355::5::978824291<font color="#c040c0">\n</font>', '1::1197::3::978302268<font color="#c040c0">\n</font>', '1::1287::5::978302039<font color="#c040c0">\n</font>', '1::2804::5::978300719<font color="#c040c0">\n</font>', '1::594::4::978302268<font color="#c040c0">\n</font>', '1::919::4::978301368<font color="#c040c0">\n</font>', '1::595::5::978824268<font color="#c040c0">\n</font>', '1::938::4::978301752<font color="#c040c0">\n</font>', '1::2398::4::978302281<font color="#c040c0">\n</font>', '1::2918::4::978302124<font color="#c040c0">\n</font>', '1::1035::5::978301753<font color="#c040c0">\n</font>', '1::2791::4::978302188<font color="#c040c0">\n</font>', '1::2687::3::978824268<font color="#c040c0">\n</font>', '1::2018::4::978301777<font color="#c040c0">\n</font>', '1::3105::5::978301713<font color="#c040c0">\n</font>', '1::2797::4::978302039<font color="#c040c0">\n</font>', ...]<br>
+<strong>ratings_file</strong> = &lt;_io.TextIOWrapper name='ml-1m/ratings.dat' mode='r' encoding='cp1252'&gt;<br>
+<strong>rms_subs</strong> = 2.1247651365195264<br>
+<strong>selected_col</strong> = 3542<br>
+<strong>selected_cols_index</strong> = array([[1290],
+       [2865],
+       [  51],
+   .....,
+       [1209],
+       [ 587],
+       [3542]])<br>
+<strong>selected_row</strong> = 2406<br>
+<strong>selected_rows_index</strong> = array([[3188],
+       [3410],
+       [4510],
+   .....,
+       [2373],
+       [2238],
+       [2406]])<br>
+<strong>subs</strong> = 1.0962936655487385<br>
+<strong>sum</strong> = 61899.42324583558<br>
+<strong>sum_90</strong> = 61891.776849193215<br>
+<strong>total_square_sum</strong> = 14078461<br>
+<strong>total_sum_diag_elements</strong> = 68768.64094354802<br>
+<strong>user_len</strong> = 6041<br>
+<strong>user_prob</strong> = array([[6.77630886e-05],
+       [1.35455147e-04]...      [3.43645516e-04],
+       [0.00000000e+00]])<br>
+<strong>z</strong> = 2.9753587401481068</td></tr></table>
+</body></html>

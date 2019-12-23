@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module svd</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>svd</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:f%3A%5Cir%20assignment%203%5Csvd.py">f:\ir assignment 3\svd.py</a></font></td></tr></table>
+    <p><tt>Singular&nbsp;Value&nbsp;Decomposition(SVD)<br>
+SVD&nbsp;Model&nbsp;is&nbsp;applied&nbsp;here&nbsp;to&nbsp;predict&nbsp;ratings&nbsp;of&nbsp;movies&nbsp;to&nbsp;users</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-error_90_percent_energy_calculation"><strong>error_90_percent_energy_calculation</strong></a>()</dt><dd><tt>Now,&nbsp;we&nbsp;check&nbsp;error&nbsp;on&nbsp;the&nbsp;SVD&nbsp;model&nbsp;with&nbsp;90%&nbsp;energy.</tt></dd></dl>
+ <dl><dt><a name="-original_matrix_construction"><strong>original_matrix_construction</strong></a>()</dt><dd><tt>Here,&nbsp;the&nbsp;file&nbsp;ratings.dat&nbsp;contains&nbsp;the&nbsp;user&nbsp;ratings&nbsp;for&nbsp;respective&nbsp;movies.<br>
+These&nbsp;ratings&nbsp;are&nbsp;further&nbsp;stored&nbsp;in&nbsp;a&nbsp;matrix&nbsp;A&nbsp;which&nbsp;is&nbsp;a&nbsp;user-movie&nbsp;matrix.<br>
+A&nbsp;is&nbsp;a&nbsp;very&nbsp;sparse&nbsp;matrix.</tt></dd></dl>
+ <dl><dt><a name="-rank_movie_matrix_construction"><strong>rank_movie_matrix_construction</strong></a>()</dt><dd><tt>VT&nbsp;is&nbsp;a&nbsp;rank&nbsp;-&nbsp;movie&nbsp;matrix.&nbsp;<br>
+V&nbsp;is&nbsp;calculated&nbsp;from&nbsp;ATA.<br>
+sorted_eigen_vector&nbsp;contains&nbsp;the&nbsp;eigen_vectors&nbsp;which&nbsp;are&nbsp;the&nbsp;columns&nbsp;of&nbsp;the&nbsp;V&nbsp;matrix.<br>
+sorted_eigen_value&nbsp;contains&nbsp;the&nbsp;eigen_values(lambda)&nbsp;for&nbsp;each&nbsp;eigen_vector&nbsp;in&nbsp;a&nbsp;descending&nbsp;sequence.</tt></dd></dl>
+ <dl><dt><a name="-sigma_matrix_construction"><strong>sigma_matrix_construction</strong></a>()</dt><dd><tt>S&nbsp;is&nbsp;a&nbsp;rank-rank&nbsp;diagonal&nbsp;matrix&nbsp;whose&nbsp;diagonals&nbsp;are&nbsp;the&nbsp;sqrt&nbsp;of&nbsp;the&nbsp;eigenvalues&nbsp;(lambda&nbsp;).<br>
+The&nbsp;diagonal&nbsp;values&nbsp;are&nbsp;in&nbsp;descending&nbsp;order&nbsp;.</tt></dd></dl>
+ <dl><dt><a name="-svd_90_percent_energy"><strong>svd_90_percent_energy</strong></a>()</dt><dd><tt>Here&nbsp;,&nbsp;we&nbsp;first&nbsp;calculate&nbsp;the&nbsp;total&nbsp;energy&nbsp;which&nbsp;is&nbsp;the&nbsp;sum&nbsp;of&nbsp;diagonal&nbsp;values&nbsp;of&nbsp;the&nbsp;matrix&nbsp;S.<br>
+Now,&nbsp;starting&nbsp;from&nbsp;the&nbsp;last&nbsp;diagonal&nbsp;element&nbsp;we&nbsp;remove&nbsp;that&nbsp;element&nbsp;and&nbsp;calculate&nbsp;the&nbsp;energy.<br>
+We&nbsp;iterate&nbsp;over&nbsp;this&nbsp;till&nbsp;we&nbsp;get&nbsp;the&nbsp;ratio&nbsp;of&nbsp;energy&nbsp;/total&nbsp;energy&nbsp;&lt;&nbsp;90%&nbsp;.<br>
+We&nbsp;now&nbsp;delete&nbsp;equal&nbsp;number&nbsp;of&nbsp;columns&nbsp;(i.e.,&nbsp;corresponding&nbsp;eigenvectors)&nbsp;from&nbsp;U&nbsp;and&nbsp;V.&nbsp;(i.e.,&nbsp;delete&nbsp;rows&nbsp;from&nbsp;VT)</tt></dd></dl>
+ <dl><dt><a name="-svd_error_calculation"><strong>svd_error_calculation</strong></a>()</dt><dd><tt>predicted_A&nbsp;is&nbsp;the&nbsp;final&nbsp;predicted&nbsp;matrix&nbsp;derived&nbsp;from&nbsp;applying&nbsp;SVD&nbsp;to&nbsp;the&nbsp;original&nbsp;matrix.<br>
+Here,&nbsp;rmse&nbsp;and&nbsp;mae&nbsp;is&nbsp;calculated&nbsp;accordingly&nbsp;from&nbsp;the&nbsp;predicted&nbsp;matrix&nbsp;and&nbsp;the&nbsp;actual&nbsp;matrix.</tt></dd></dl>
+ <dl><dt><a name="-user_rank_matrix_construction"><strong>user_rank_matrix_construction</strong></a>()</dt><dd><tt>U&nbsp;is&nbsp;a&nbsp;user&nbsp;-&nbsp;rank&nbsp;matrix.&nbsp;<br>
+U&nbsp;is&nbsp;calculated&nbsp;from&nbsp;AAT.<br>
+sorted_eigen_vector&nbsp;contains&nbsp;the&nbsp;eigen_vectors&nbsp;which&nbsp;are&nbsp;the&nbsp;columns&nbsp;of&nbsp;the&nbsp;U&nbsp;matrix.<br>
+sorted_eigen_value&nbsp;contains&nbsp;the&nbsp;eigen_values(lambda)&nbsp;for&nbsp;each&nbsp;eigen_vector&nbsp;in&nbsp;a&nbsp;descending&nbsp;sequence.</tt></dd></dl>
+</td></tr></table>
+</body></html>
